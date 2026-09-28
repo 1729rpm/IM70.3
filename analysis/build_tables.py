@@ -2,12 +2,16 @@
 
 usage: python build_tables.py <fit_folder> <activities.csv> <workouts.csv> <metrics.csv> <out_dir>
 
+Normally called through analysis/ingest.py (weekly.csv every time, fitness_curves.csv only with --full).
+Thresholds (LTHR per sport, interval title words, gap length) come from config/athlete.yaml.
+
 weekly.csv (weeks start Monday, IST):
   hours and km per sport excluding duplicate uploads; tp_shows_h is what TrainingPeaks displayed
   (inflated by the double uploads); planned vs completed sessions from the TrainingPeaks CSV;
   hr_load is a corrected training load: sum over sessions of hours * (avgHR / sport LTHR)^2 * 100
-  (hrTSS with LTHR run 170, bike 162, swim 165; the TrainingPeaks TSS column is unusable, see athlete.md);
+  (the TrainingPeaks TSS column is unusable, see athlete.md);
   gap_days is the longest run of days without any session that touches the week.
+  build_wellness.py adds resting_hr_med, hrv_med, sleep_h_med, wellness_days.
 
 fitness_curves.csv (one row per month), all from record-level data after the first 10 minutes:
   run_pace_at_hr150..165: outdoor GPS runs only, median pace of samples within 3 bpm of the target HR,
@@ -19,16 +23,16 @@ fitness_curves.csv (one row per month), all from record-level data after the fir
   run curves skip interval, rep, stride, fartlek, hill and time-trial sessions (title match), where HR lags pace
   long_session_decoupling_pct: median decoupling of kept sessions of 90 minutes or more
   resting_hr, hrv, sleep_h: monthly medians from the Garmin daily metrics
-  weight_kg: last logged weight in the month (only 5 entries exist)
+  weight_kg: last logged weight in the month
 """
 import sys, os, glob
 import numpy as np, pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from load import load_legs
+from config import LTHR, GAP_DAYS, is_interval_title
 
-LTHR = {'running': 170, 'cycling': 162, 'swimming': 165}
 MIN_SAMPLES = 300
-INTERVAL_WORDS = ('interval', '800', '1200', 'reps', 'strides', 'fartlek', 'time trial', '30-30', 'pickups', 'hill')
+
 
 def fmt_pace(v):
     if not v or v <= 0 or np.isnan(v): return None
@@ -36,11 +40,13 @@ def fmt_pace(v):
     if s == 60: m += 1; s = 0
     return f'{m}:{s:02d}'
 
+
 def fmt_pace100(v):
     if not v or v <= 0 or np.isnan(v): return None
     p = 100 / v / 60; m = int(p); s = int(round((p - m) * 60))
     if s == 60: m += 1; s = 0
     return f'{m}:{s:02d}'
+
 
 def weekly(acts, tp):
     a = acts[acts.duplicate_of.isna() & ~acts.sport.eq('transition')].copy()
@@ -58,7 +64,6 @@ def weekly(acts, tp):
     w['total_h'] = a.groupby('week').h.sum()
     w['hr_load'] = a.groupby('week').hr_load.sum()
     w['sessions'] = a.groupby('week').size()
-    # TrainingPeaks side
     tp = tp.copy(); tp['date'] = pd.to_datetime(tp.WorkoutDay)
     tp['week'] = (tp.date - pd.to_timedelta(tp.date.dt.weekday, unit='D')).dt.date
     tp['done'] = tp.TimeTotalInHours.fillna(0) > 0
@@ -73,9 +78,8 @@ def weekly(acts, tp):
     w = w.reindex(sorted(set(allw) | set(w.index) | set(tp.week)))
     w = w.fillna(0)
     w['completion_pct'] = np.where(w.planned_sessions > 0, 100 * w.completed_planned / w.planned_sessions, np.nan)
-    # gap days touching the week
     days = sorted(a.date.dt.normalize().unique())
-    gaps = [(x, y, (y - x).days) for x, y in zip(days, days[1:]) if (y - x).days >= 7]
+    gaps = [(x, y, (y - x).days) for x, y in zip(days, days[1:]) if (y - x).days >= GAP_DAYS]
     def gap_for(week):
         ws = pd.Timestamp(week); we = ws + pd.Timedelta(days=6)
         return max([d for x, y, d in gaps if x <= we and y >= ws], default=0)
@@ -85,6 +89,7 @@ def weekly(acts, tp):
             'sessions', 'planned_sessions', 'completed_planned', 'unplanned_sessions', 'completion_pct', 'planned_h', 'hr_load', 'gap_days']
     return w[cols].round(1)
 
+
 def curves(fit_folder, acts, metrics):
     a = acts[acts.duplicate_of.isna()].copy(); a['date'] = pd.to_datetime(a.date)
     files = {os.path.basename(f): f for f in glob.glob(os.path.join(fit_folder, '**', '*'), recursive=True)}
@@ -92,9 +97,8 @@ def curves(fit_folder, acts, metrics):
     for _, r in a.iterrows():
         path = files.get(r.file)
         if not path: continue
-        title = str(r.get('title') or '').lower()
         if r.sport == 'running' and not r.indoor:
-            if any(k in title for k in INTERVAL_WORDS): continue   # intervals break the pace-at-HR relation (HR lag)
+            if is_interval_title(r.get('title')): continue   # intervals break the pace-at-HR relation (HR lag)
             bucket = runs
         elif r.sport == 'cycling' and r.hr_source == 'strap': bucket = bikes
         elif r.sport == 'swimming': bucket = swims
@@ -104,7 +108,6 @@ def curves(fit_folder, acts, metrics):
             if str(sess.get('sport')) != r.sport or not len(df): continue
             m = r.date.to_period('M')
             if bucket is swims:
-                # pool files carry no per-record speed; use laps (distance / timer) with lap average HR
                 if len(laps):
                     l = laps[(laps.dist > 0) & (laps.timer > 0) & laps.hr.notna()].copy()
                     l['v'] = l.dist / l.timer
@@ -153,6 +156,7 @@ def curves(fit_folder, acts, metrics):
             'long_session_decoupling_pct', 'long_sessions_n', 'garmin_vo2max', 'resting_hr', 'hrv', 'sleep_h', 'weight_kg']
     return pd.DataFrame(rows).reindex(columns=cols)
 
+
 def main():
     fit_folder, acts_csv, tp_csv, metrics_csv, out = sys.argv[1:6]
     acts = pd.read_csv(acts_csv); tp = pd.read_csv(tp_csv)
@@ -161,5 +165,6 @@ def main():
     w = weekly(acts, tp); w.to_csv(os.path.join(out, 'weekly.csv'))
     c = curves(fit_folder, acts, metrics); c.to_csv(os.path.join(out, 'fitness_curves.csv'), index=False)
     print(f'{len(w)} weeks, {len(c)} months -> {out}')
+
 
 if __name__ == '__main__': main()

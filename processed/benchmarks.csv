@@ -1,0 +1,92 @@
+benchmark_id,label,date,title,pace_min_km,avg_hr,avg_power_w,decoupling_pct,avg_cadence,duration_min,distance_km,pace_per_100m,hr_source,indoor,file
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-01-27,High Power Big Gear Strength Work (17) - 6 x 2 min Z5/6 - INTO - 10 min Tempo | Indoor Cycling,,122,114.0,12.2,,77.2,,,strap,True,MyWhoosh - Bhutan Outer Loop.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-02-04,High Power Big Gear Strength Work (27) - 10 x 1.5 min Z5/6 - INTO - 3 x 10 min Tempo | Indoor Cycling,,122,115.0,10.6,,104.1,,,strap,True,MyWhoosh - Dust Trail.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-02-07,70.3 Build - 5 x 20 min - Choice RPM | Indoor Cycling,,131,112.0,8.8,,165.2,,,strap,True,MyWhoosh - Tel Moreeb .fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-02-10,70.3 A race week bike | Indoor Cycling,,114,92.0,7.5,,70.2,,,strap,True,MyWhoosh - Al Qudra.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-04-11,FTP TEST - no ERG Mode! | Indoor Cycling,,145,92.0,30.9,,140.3,,,strap,True,MyWhoosh - FTP TEST - no ERG Mode!.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-04-16,Big Gear Strength Development | Indoor Cycling,,134,103.0,-4.9,,77.1,,,strap,True,MyWhoosh - Big Gear Strength Development.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-04-28,High Power Big Gear Strength Work | Indoor Cycling,,132,104.0,19.2,,70.4,,,strap,True,MyWhoosh - High Power Big Gear Strength Work.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-04-30,(12) Anaerobic Russian Sprints x 2 into 10 min tempo | Indoor Cycling,,145,111.0,17.8,,82.4,,,strap,True,MyWhoosh - (12) Anaerobic Russian Sprints x 2 into 10 min tempo.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-05-21,VO2 Into Tempo | Indoor Cycling,,127,71.0,12.3,,90.1,,,strap,True,MyWhoosh - Heart of Switzerland.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-06-16,VO₂ Micro-Intervals | Indoor Cycling,,145,107.0,13.5,,70.2,,,strap,True,MyWhoosh - VO₂ Micro-Intervals.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-06-25,VO₂ Repeats | Indoor Cycling,,138,106.0,6.1,,90.6,,,strap,True,MyWhoosh - VO₂ Repeats.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-07-11,Sweetspot Development | Indoor Cycling,,145,116.0,9.7,,159.6,,,strap,True,MyWhoosh - Sweetspot Development.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-07-18,Endurance ride 120k | Indoor Cycling,,132,99.0,12.2,,292.5,,,strap,True,MyWhoosh - Limmat Loop.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-07-21,Steady Threshold | Indoor Cycling,,121,110.0,11.3,,88.7,,,strap,True,MyWhoosh - Steady Threshold.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-08-06,Over-Unders | Indoor Cycling,,124,122.0,10.8,,93.6,,,strap,True,MyWhoosh - Col du Galibier.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-08-08,70.3 Build | Indoor Cycling,,135,101.0,19.6,,193.2,,,strap,True,MyWhoosh - 70.3 Build.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-08-20,Threshold Z4 Tolerance | Indoor Cycling,,137,116.0,-0.4,,63.8,,,strap,True,MyWhoosh - Threshold Z4 Tolerance.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-09-12,Longer Endurance Development (11) - Mixed - Indoor | Indoor Cycling,,139,100.0,14.2,,158.3,,,strap,True,MyWhoosh - Longer Endurance Development (11) - Mixed - Indoor.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-09-19,Longer Endurance Development | Indoor Cycling,,141,101.0,9.0,,181.0,,,strap,True,MyWhoosh - Longer Endurance Development.fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-09-22,VO₂ Micro-Intervals (30/30),,131,108.0,7.9,,69.1,,,strap,True,30).fit.gz
+bike_endurance_power,"Indoor ride with power and chest strap, 60 min or more",2026-09-25,MyWhoosh - Mount Grizzly | Indoor Cycling,,113,75.0,12.3,,60.3,,,strap,True,MyWhoosh - Mount Grizzly.fit.gz
+bike_long,"Long ride, 150 min or more",2025-10-12,Long ride | Indoor Cycling,,128,,,,154.8,0.0,,wrist,True,tp-5932731.2025-10-12-07-45-07-650Z.GarminPing.AAAAAGjrXIMPmlZw.FIT.gz
+bike_long,"Long ride, 150 min or more",2025-10-26,Long ride | Indoor Cycling,,118,85.0,-3.9,,171.6,55.63,,wrist,True,MyWhoosh - Long ride.fit.gz
+bike_long,"Long ride, 150 min or more",2026-01-04,The Century Builder-Long Ride,,148,,4.7,,190.8,90.12,,wrist,False,tp-5932731.2026-01-04-06-54-02-941Z.GarminPing.AAAAAGlaDoqA58Bd.FIT.gz
+bike_long,"Long ride, 150 min or more",2026-01-18,Race Pace Long ride | Indoor Cycling,,140,109.0,5.7,,175.1,48.26,,wrist,True,MyWhoosh - Race Pace Long ride.fit.gz
+bike_long,"Long ride, 150 min or more",2026-01-25,70.3 Build - 8 x 10 min - Choice RPM,,135,114.0,7.5,,160.1,47.71,,wrist,True,MyWhoosh - 70.3 Build - 8 x 10 min - Choice RPM.fit.gz
+bike_long,"Long ride, 150 min or more",2026-01-31,Elite 70.3 Build - 6 x 15 min Choice RPM,,148,,19.0,,178.7,90.29,,strap,False,tp-5932731.2026-01-31-06-21-36-424Z.GarminPing.AAAAAGl9n3BYpCHE.FIT.gz
+bike_long,"Long ride, 150 min or more",2026-02-07,70.3 Build - 5 x 20 min - Choice RPM | Indoor Cycling,,131,112.0,8.8,,165.2,57.88,,strap,True,MyWhoosh - Tel Moreeb .fit.gz
+bike_long,"Long ride, 150 min or more",2026-02-14,Cycling,,148,,-7.7,,195.5,89.03,,strap,False,tp-5932731.2026-02-14-10-32-04-074Z.GarminPing.AAAAAGmQTyMAoxr7.FIT.gz
+bike_long,"Long ride, 150 min or more",2026-06-13,70.3 Build | Indoor Cycling,,147,,,,150.1,0.0,,strap,True,tp-5932731.2026-06-13-12-28-52-345Z.GarminPing.AAAAAGotTQRtKAEN.FIT.gz
+bike_long,"Long ride, 150 min or more",2026-06-20,70.3 Build | Indoor Cycling,,141,,,,164.3,0.0,,strap,True,tp-5932731.2026-06-20-05-11-29-646Z.GarminPing.AAAAAGo2IQE1kV8p.FIT.gz
+bike_long,"Long ride, 150 min or more",2026-07-04,Endurance ride 100k,,142,,14.9,,222.2,92.35,,strap,False,tp-5932731.2026-07-04-05-49-27-055Z.GarminPing.AAAAAGpInuZovToF.FIT.gz
+bike_long,"Long ride, 150 min or more",2026-07-11,Sweetspot Development | Indoor Cycling,,145,116.0,9.7,,159.6,68.14,,strap,True,MyWhoosh - Sweetspot Development.fit.gz
+bike_long,"Long ride, 150 min or more",2026-07-18,Endurance ride 120k | Indoor Cycling,,132,99.0,12.2,,292.5,120.09,,strap,True,MyWhoosh - Limmat Loop.fit.gz
+bike_long,"Long ride, 150 min or more",2026-08-08,70.3 Build | Indoor Cycling,,135,101.0,19.6,,193.2,77.53,,strap,True,MyWhoosh - 70.3 Build.fit.gz
+bike_long,"Long ride, 150 min or more",2026-09-12,Longer Endurance Development (11) - Mixed - Indoor | Indoor Cycling,,139,100.0,14.2,,158.3,62.31,,strap,True,MyWhoosh - Longer Endurance Development (11) - Mixed - Indoor.fit.gz
+bike_long,"Long ride, 150 min or more",2026-09-19,Longer Endurance Development | Indoor Cycling,,141,101.0,9.0,,181.0,70.06,,strap,True,MyWhoosh - Longer Endurance Development.fit.gz
+brick_run,Run starting within 45 min of a ride ending,2025-09-21,Brick Run,8:44,149,,,,15.9,,,wrist,False,tp-5932731.2025-09-21-15-05-17-641Z.GarminPing.AAAAAGjQFC0k3AsU.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-09-25,Brick Run,8:40,154,,,,15.3,,,wrist,False,tp-5932731.2025-09-25-16-17-18-200Z.GarminPing.AAAAAGjVaw3S8vbg.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-02,Brick Run,9:06,141,,,,15.1,,,wrist,False,tp-5932731.2025-10-02-14-26-46-640Z.GarminPing.AAAAAGjei6UjxYPp.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-05,Brick Run,9:25,136,,,,30.4,,,wrist,True,tp-5932731.2025-10-05-10-45-27-133Z.GarminPing.AAAAAGjiTEZMpihI.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-12,Brick Run,8:13,142,,,,15.2,,,wrist,True,tp-5932731.2025-10-12-08-19-52-623Z.GarminPing.AAAAAGjrZKivET6H.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-15,Brick Run,8:44,142,,,,15.2,,,wrist,True,tp-5932731.2025-10-15-16-40-18-313Z.GarminPing.AAAAAGjvznGWR1zr.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-22,Brick Run,8:10,142,,,,15.2,,,wrist,True,tp-5932731.2025-10-22-04-25-43-845Z.GarminPing.AAAAAGj4XMfHHfdE.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-26,Brick Run,8:03,147,,,,27.2,,,wrist,True,tp-5932731.2025-10-26-11-17-19-251Z.GarminPing.AAAAAGj-Az6C9i4n.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-10-30,Brick Run,8:12,142,,,,15.4,,,wrist,True,tp-5932731.2025-10-30-06-57-25-624Z.GarminPing.AAAAAGkDDFVP0AJS.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-11-12,Rhythm Run- Aerobic Conditioning,8:52,146,,-0.8,,46.4,,,wrist,True,tp-5932731.2025-11-12-04-56-24-478Z.GarminPing.AAAAAGkUE3iB1n5u.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-11-27,Rhythm Run- Aerobic Conditioning,8:38,136,,2.2,,35.1,,,wrist,True,tp-5932731.2025-11-27-04-31-12-214Z.GarminPing.AAAAAGkn1A9DqnqT.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-12-04,Recovery Rhythm- Aerobic Run,8:03,138,,-1.1,,40.8,,,wrist,True,tp-5932731.2025-12-04-02-43-36-209Z.GarminPing.AAAAAGkw9VdNLs5T.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2025-12-11,Recovery Rhythm- Aerobic Run,8:14,136,,2.3,,50.1,,,wrist,True,tp-5932731.2025-12-11-15-29-03-385Z.GarminPing.AAAAAGk64z-bq5YC.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-01-01,Aerobic Reset,7:59,146,,-0.0,,45.1,,,wrist,True,tp-5932731.2026-01-01-10-00-43-851Z.GarminPing.AAAAAGlWRcvTlOEu.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-01-11,Pre race run strides | Running,6:21,151,,26.7,,63.8,,,wrist,False,tp-5932731.2026-01-11-05-24-15-690Z.GarminPing.AAAAAGljM_8XUMXU.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-01-16,Brick Run,6:30,155,,-3.2,,40.1,,,strap,False,tp-5932731.2026-01-16-15-53-12-316Z.GarminPing.AAAAAGlqXuhjlSGB.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-01-18,Brick Run,7:22,153,,7.9,,40.2,,,wrist,False,tp-5932731.2026-01-18-13-43-15-664Z.GarminPing.AAAAAGls43Pdtxn8.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-01-25,Tempo OTB (3 x 2k - 70.3 pace),6:16,155,,9.0,,54.9,,,wrist,False,tp-5932731.2026-01-25-09-42-03-451Z.GarminPing.AAAAAGl15WsX8aHD.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-01-31,,6:54,143,,,,15.2,,,wrist,False,tp-5932731.2026-01-31-06-54-14-410Z.GarminPing.AAAAAGl9pxauMzJR.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-02-07,Tempo OTB (3 x 2.5mile - 70.3 pace),6:16,154,,9.5,,40.2,,,wrist,False,tp-5932731.2026-02-07-14-59-00-443Z.GarminPing.AAAAAGmHUzR_g9tr.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-02-14,Running,7:04,152,,1.4,,148.5,,,strap,False,tp-5932731.2026-02-14-10-32-04-074Z.GarminPing.AAAAAGmQTyMAoxr7.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-08-08,70.3 Run Off Bike,7:33,151,,9.4,,39.6,,,wrist,False,tp-5932731.2026-08-08-04-32-13-507Z.GarminPing.AAAAAGp2sU0Y12Al.FIT.gz
+brick_run,Run starting within 45 min of a ride ending,2026-08-22,70.3 Run Off Bike,7:19,157,,-0.1,,36.8,,,wrist,False,tp-5932731.2026-08-22-09-09-39-565Z.GarminPing.AAAAAGqJZ1OtJu8f.FIT.gz
+run_easy_outdoor,"Outdoor easy run, pace at HR 145 to 158",2026-03-28,Negative Split Long Run,8:28,146,,1.2,,,,,wrist,False,tp-5932731.2026-03-28-03-33-17-672Z.GarminPing.AAAAAGnHS_16xQbH.FIT.gz
+run_easy_outdoor,"Outdoor easy run, pace at HR 145 to 158",2026-09-07,Running,8:29,145,,7.5,,,,,wrist,False,tp-5932731.2026-09-07-15-21-21-805Z.GarminPing.AAAAAGqe1nEE6fWU.FIT.gz
+run_easy_outdoor,"Outdoor easy run, pace at HR 145 to 158",2026-09-16,Run opt (low stress resilience) Z1,8:01,149,,4.3,,,,,wrist,False,tp-5932731.2026-09-16-04-00-14-505Z.GarminPing.AAAAAGqqFE6RH2_8.FIT.gz
+run_steady_outdoor,"Outdoor steady run, pace at HR 159 to 168",2026-09-27,Run opt (low stress resilience) Z1,6:42,164,,2.0,,,,,wrist,False,tp-5932731.2026-09-27-03-29-54-090Z.GarminPing.AAAAAGq4jbEkCixT.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2025-10-22,,,110,,,,,1.6,3:50,wrist,True,tp-5932731.2025-10-22-14-41-39-595Z.GarminPing.AAAAAGj47SMFVPPN.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2025-11-12,Balance and Streamline,,131,,,,,1.6,2:44,wrist,True,tp-5932731.2025-11-12-15-15-49-506Z.GarminPing.AAAAAGkUpKXH5vKa.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2025-11-14,Endurance and Confidence,,139,,,,,1.86,2:38,wrist,True,tp-5932731.2025-11-14-15-40-07-922Z.GarminPing.AAAAAGkXTVf7Xnwe.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2025-11-22,Endurance and Confidence,,138,,,,,2.12,2:23,wrist,True,tp-5932731.2025-11-22-13-50-05-614Z.GarminPing.AAAAAGkhv43UhSqE.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2025-12-25,Threshold Builder,,140,,,,,1.75,2:03,wrist,True,tp-5932731.2025-12-25-13-15-36-105Z.GarminPing.AAAAAGlNOPcix0Z_.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-02,Speed and Skill,,119,,,,,1.6,2:34,wrist,True,tp-5932731.2026-01-02-13-29-41-684Z.GarminPing.AAAAAGlXyEXahbjP.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-03,Endurance Threshold Combo,,137,,,,,2.5,2:34,wrist,True,tp-5932731.2026-01-03-03-33-55-224Z.GarminPing.AAAAAGlYjiI1zaZe.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-13,Speed and Skill,,127,,,,,2.0,2:24,wrist,True,tp-5932731.2026-01-13-16-24-52-097Z.GarminPing.AAAAAGlmcdPIhDfs.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-14,Open Water Flow,,123,,,,,2.1,2:21,wrist,True,tp-5932731.2026-01-14-16-27-59-613Z.GarminPing.AAAAAGlnxA_lAwJj.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-15,Endurance Builder,,128,,,,,1.6,2:34,wrist,True,tp-5932731.2026-01-15-16-35-34-389Z.GarminPing.AAAAAGlpF1aSUCiY.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-17,Endurance Threshold Combo,,132,,,,,2.0,2:04,wrist,True,tp-5932731.2026-01-17-14-19-27-180Z.GarminPing.AAAAAGlrmm7mMEdo.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-21,Open Water Flow,,138,,,,,1.95,2:14,wrist,True,tp-5932731.2026-01-21-15-21-59-152Z.GarminPing.AAAAAGlw7xb2Hshn.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-22,Endurance Threshold Combo,,141,,,,,2.55,2:16,wrist,True,tp-5932731.2026-01-22-16-05-42-472Z.GarminPing.AAAAAGlyStZ1q9uc.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-27,,,122,,,,,2.15,2:04,wrist,True,tp-5932731.2026-01-27-15-30-21-512Z.GarminPing.AAAAAGl42g1Ssqvh.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-01-28,Open Water Flow,,121,,,,,1.9,2:50,wrist,True,tp-5932731.2026-01-28-16-08-49-098Z.GarminPing.AAAAAGl6NJAU5I3Y.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-02-03,Endurance Builder,,128,,,,,2.02,2:23,wrist,True,tp-5932731.2026-02-03-16-00-53-065Z.GarminPing.AAAAAGmCG7Q_Cxt-.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-02-05,Full Distance Rehearsal,,133,,,,,1.9,2:42,wrist,True,tp-5932731.2026-02-05-15-35-59-244Z.GarminPing.AAAAAGmEuN4OqVwC.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-02-06,Open Water Flow,,137,,,,,2.05,2:25,wrist,True,tp-5932731.2026-02-06-16-32-15-083Z.GarminPing.AAAAAGmGF45lmgju.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-02-14,Open Water Swimming,,135,,,,,1.82,2:23,strap,False,tp-5932731.2026-02-14-10-32-04-074Z.GarminPing.AAAAAGmQTyMAoxr7.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-04-01,Swim key,,117,,,,,2.55,3:04,wrist,True,tp-5932731.2026-04-01-04-36-24-765Z.GarminPing.AAAAAGnMoMj8lKBX.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-06-09,Swim key,,145,,,,,1.75,2:50,wrist,True,tp-5932731.2026-06-09-15-39-05-076Z.GarminPing.AAAAAGooM5j1_MPL.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-06-14,Squad swim session,,130,,,,,1.68,2:52,wrist,True,tp-5932731.2026-06-14-16-09-58-687Z.GarminPing.AAAAAGou0lZPAO-s.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-06-17,Swim key,,124,,,,,1.77,2:53,wrist,True,tp-5932731.2026-06-17-05-06-44-753Z.GarminPing.AAAAAGoyK2TBZFLX.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-08-19,Swim (Test Set),,126,,,,,1.65,3:01,wrist,True,tp-5932731.2026-08-19-14-02-25-826Z.GarminPing.AAAAAGqFt3EJJxws.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-08-21,Swim key,,127,,,,,1.73,2:52,wrist,True,tp-5932731.2026-08-21-04-12-01-716Z.GarminPing.AAAAAGqH0BHYiuaV.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-08-25,Swim 109 - Pull and Breathe,,131,,,,,1.57,2:40,wrist,True,tp-5932731.2026-08-25-15-32-03-247Z.GarminPing.AAAAAGqNtXOE0dYz.FIT.gz
+swim_continuous,"Swim of 1,500 m or more (pace over the whole session, rests included)",2026-09-24,Swim key,,134,,,,,1.98,3:26,wrist,True,tp-5932731.2026-09-24-03-08-27-606Z.GarminPing.AAAAAGq0lCtA0n9l.FIT.gz
