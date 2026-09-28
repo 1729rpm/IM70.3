@@ -9,4 +9,4 @@ One markdown file per piece of analysis:
 
 Race plans and debriefs are in `races/`, not here. Every report follows the writing rules in INSTRUCTIONS.md: explained terms, nothing repeated from other files, verdict first, numbers with their trust and confidence.
 
-`2026-year-review.md` predates those rules and is denser than a weekly report should be; read GLOSSARY.md alongside it. Its conclusions are summarised in plain language in insights.md.
+`2026-year-review.md` is the evidence behind the dated 2026-09-28 lines in insights.md. It is longer than a weekly review because it covers thirteen months (about a ten-minute read), but it explains its own terms, so GLOSSARY.md is not needed alongside it.
