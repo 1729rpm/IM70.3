@@ -1,0 +1,99 @@
+# The one place analysis rules and thresholds live. Every script in analysis/ reads this file.
+# athlete.md describes the athlete in prose and points here for numbers; prompts and READMEs never repeat them.
+# Edit a value here, rerun the scripts, and every table and STATE.md follow.
+
+timezone: Asia/Kolkata          # all timestamps in the tables are IST
+week_starts: monday
+
+heart_rate:
+  lthr:                          # lactate threshold HR per sport, used for HR load and zone cut-offs
+    running: 170
+    cycling: 162
+    swimming: 165
+  max: 200
+  resting: 45                    # mid-40s; the 69 in Garmin activity files is a profile placeholder
+  run_minus_bike_offset: 6       # run HR sits about 5 to 8 bpm above bike HR at the same effort
+  intensity_bands:               # for the easy / moderate / hard split, HR across all sports
+    easy_below: 140
+    hard_from: 160
+
+power:
+  ftp_estimate_w: 155            # 150 to 160 from training data, no recent test
+  ftp_trainingpeaks_w: 140       # what TrainingPeaks has had all year
+
+data_cleaning:
+  treadmill_speed_factor: 0.88   # treadmill reads 10 to 15% fast; actual speed = shown speed x 0.88
+  duplicate_overlap_fraction: 0.6   # same sport, time windows overlapping more than 60% of the shorter = one session
+  keeper_priority: [power, strap_hr, outdoor_gps]   # which copy to keep when two files describe one session
+  interval_title_words: [interval, "800", "1200", reps, strides, fartlek, time trial, "30-30", "30/30", pickups, hill]
+  gap_days_threshold: 7          # a break of this many days or more counts as a gap
+  trust:
+    hr_strap: high
+    hr_wrist: low                # jumps of 18 bpm in 20 s seen; unusable for cap-based pacing
+    trainingpeaks_tss: unusable  # run and swim thresholds misconfigured all year; use hr_load instead
+    logged_rpe_and_feel: ignore
+
+# Repeatable sessions tracked over time in processed/benchmarks.csv. Each rule matches rows in activities.csv.
+benchmarks:
+  - id: run_easy_outdoor
+    label: Outdoor easy run, pace at HR 145 to 158
+    sport: running
+    indoor: false
+    min_minutes: 40
+    avg_hr_between: [145, 158]
+    exclude_interval_titles: true
+    exclude_title_words: [tempo, threshold, otb, progressive, brick, race]
+    brick: false
+    report: [pace_min_km, avg_hr, decoupling_pct]
+  - id: run_steady_outdoor
+    label: Outdoor steady run, pace at HR 159 to 168
+    sport: running
+    indoor: false
+    min_minutes: 40
+    avg_hr_between: [159, 168]
+    exclude_interval_titles: true
+    exclude_title_words: [brick]
+    brick: false
+    report: [pace_min_km, avg_hr, decoupling_pct]
+  - id: bike_endurance_power
+    label: Indoor ride with power and chest strap, 60 min or more
+    sport: cycling
+    hr_source: strap
+    requires_power: true
+    min_minutes: 60
+    exclude_interval_titles: false
+    report: [avg_power_w, avg_hr, decoupling_pct, duration_min]
+  - id: bike_long
+    label: Long ride, 150 min or more
+    sport: cycling
+    min_minutes: 150
+    report: [avg_power_w, avg_hr, decoupling_pct, duration_min, distance_km]
+  - id: swim_continuous
+    label: Swim of 1,500 m or more (pace over the whole session, rests included)
+    sport: swimming
+    min_km: 1.5
+    report: [pace_per_100m, avg_hr, distance_km]
+  - id: brick_run
+    label: Run starting within 45 min of a ride ending
+    sport: running
+    brick: true
+    report: [pace_min_km, avg_hr, decoupling_pct, duration_min]
+
+races:
+  - name: IRONMAN 70.3 Goa
+    date: 2026-11-01
+    priority: A
+    file: races/2026-11-01-goa-70.3.md
+  - name: IRONMAN 70.3 Venice-Jesolo
+    date: 2027-04-24         # confirm on registration; some listings show 2 May 2027
+    priority: A
+    file: races/2027-04-24-venice-jesolo-70.3.md
+  - name: Test half marathon
+    date: 2027-02-13
+    priority: B
+    file: null
+
+unavailable:                     # running and gym only in these windows
+  - {from: 2026-11-05, to: 2026-11-11, reason: Diwali}
+  - {from: 2026-12-19, to: 2027-01-02, reason: vacation}
+  - {from: 2027-02-20, to: 2027-02-24, reason: wedding}
