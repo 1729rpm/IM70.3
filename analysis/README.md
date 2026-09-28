@@ -1,20 +1,18 @@
 # Analysis scripts
 
 ```
-pip install fitdecode pandas numpy --break-system-packages
+pip install fitdecode pandas numpy pyyaml --break-system-packages
+python analysis/ingest.py <trainingpeaks_export.zip> --today YYYY-MM-DD        # every week
+python analysis/ingest.py <full_activity_archive> --full --today YYYY-MM-DD    # quarterly, rebuilds fitness curves
 ```
 
-- `load.py`: `load_legs(path)` returns one (records, laps, session) tuple per session, so a multisport race file yields swim, T1, bike, T2, run. `load(path)` parses a .fit or .fit.gz and returns records, laps, session, device info, user profile, zones, events. Timestamps in IST. `hr_source(dev)` returns strap or wrist. `pace(v)` formats m/s as min:sec per km.
-- `blocks.py`: `steady_blocks(df, col)` finds near-constant power or speed stretches and reports HR behaviour inside them (slope near 0 = steady state). `decoupling(df, col)` gives first-half vs second-half efficiency loss in percent.
-- `build_activities.py`: builds `processed/activities.csv` from a folder of FIT files, flags duplicate uploads (time-window overlap, keeps the file with power), propagates strap HR to both copies, corrects treadmill pace, computes decoupling, pulls Garmin VO2max and recovery time, and optionally joins the TrainingPeaks workouts CSV for planned duration and titles.
+All thresholds and rules come from `config/athlete.yaml` through `config.py`; nothing is hard-coded in a script.
 
-- `build_tables.py`: builds `processed/weekly.csv` and `processed/fitness_curves.csv` from the FIT folder, activities.csv, the TrainingPeaks workouts CSV and metrics CSV. See its docstring for the exact definitions.
-
-```
-python analysis/build_activities.py <fit_folder> processed/activities.csv --tp-csv workouts.csv
-python analysis/build_tables.py <fit_folder> processed/activities.csv workouts.csv metrics.csv processed
-```
-
-When two exports overlap (e.g. Sep 2025 to Aug 2026 and Aug to Sep 2026), concatenate the workouts CSVs and metrics CSVs and drop exact duplicate rows before running; copy the FIT files into one folder (duplicate file names are the same file).
-
-Conventions the scripts encode: IST, treadmill correction 12%, duplicate rule = same sport and more than 60% time overlap, keeper priority power > strap > outdoor GPS.
+- `ingest.py`: the weekly entry point. Unzips, classifies files, merges the TrainingPeaks CSVs into `raw/`, skips activity files already in the manifest, parses new ones, re-checks duplicates across the whole table, rebuilds the tables, writes `plan/`, regenerates `STATE.md`.
+- `build_activities.py`: FIT files to `activities.csv` rows (used by ingest; run directly only for a from-scratch rebuild). Splits multisport files, flags duplicates (same sport, time overlap above the configured fraction; keeps power over strap over GPS), corrects treadmill pace, computes drift.
+- `build_tables.py`: `weekly.csv` (every ingest) and `fitness_curves.csv` (full rebuild only). Definitions in the docstring.
+- `build_benchmarks.py`: `benchmarks.csv` from `activities.csv` using the benchmark rules in config. No FIT files needed.
+- `build_wellness.py`: `wellness_daily.csv` from the metrics export and weekly medians into `weekly.csv`.
+- `build_state.py`: `STATE.md` from the tables and config.
+- `load.py`: FIT parsing (`load_legs` returns one records/laps/session set per leg; `hr_source` says strap or wrist; timestamps IST).
+- `blocks.py`: steady-state detection and drift (`decoupling`) on a session's records.
