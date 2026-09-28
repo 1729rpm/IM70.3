@@ -12,8 +12,8 @@ Everything Claude produces from Rajat's TrainingPeaks and Garmin data lives here
 | `prompts.md` | the prompts used to start each kind of chat, plus the Claude project instructions | Claude |
 | `analysis/` | FIT parsing, steady-state detection, activities builder | Claude |
 | `processed/activities.csv` | one row per session | `analysis/build_activities.py` |
-| `processed/weekly.csv` | hours, km, planned vs completed, corrected load, by week | Claude |
-| `processed/fitness_curves.csv` | monthly fitness proxies: run pace at fixed HR, bike watts per beat, swim pace at fixed HR | Claude |
+| `processed/weekly.csv` | hours, km, planned vs completed, HR-based load, gaps, by week | `analysis/build_tables.py` |
+| `processed/fitness_curves.csv` | monthly fitness proxies: run pace at fixed HR, bike watts per beat, swim pace at fixed HR, resting HR, HRV, sleep, weight | `analysis/build_tables.py` |
 | `reports/` | one markdown per analysis or week, `YYYY-Www.md` or `YYYY-MM-DD-<race>.md` | Claude |
 
 ## Weekly loop
@@ -36,4 +36,5 @@ Everything Claude produces from Rajat's TrainingPeaks and Garmin data lives here
 ```
 pip install fitdecode pandas numpy --break-system-packages
 python analysis/build_activities.py <folder of FIT files> processed/activities.csv --tp-csv <workouts.csv>
+python analysis/build_tables.py <folder of FIT files> processed/activities.csv <workouts.csv> <metrics.csv> processed
 ```

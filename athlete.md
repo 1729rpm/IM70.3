@@ -59,6 +59,8 @@ Last updated 2026-09-28. Update when a number changes; keep the old value in bra
 
 ## TrainingPeaks and Garmin data quirks
 - Duplicate uploads of every MyWhoosh ride (11 of 34 ride rows in Aug to Sep). Fix the upload path.
-- Run TSS of 600 to 1,300 per run: run threshold pace is misconfigured. HR zones imply a threshold near 153, which looks like a bike number applied to runs. Set run LTHR 170 and threshold pace about 6:15/km.
+- Run TSS is wrong for the whole year, in two regimes. Sep 2025 to 6 Feb 2026: outdoor (GPS) runs show IF 1.4 to 1.9 and TSS 200 to 340, which back-solves to a run threshold pace of about 4:35/km. From 7 Feb 2026: IF 2.5 to 3.5 and TSS 500 to 2,800, back-solving to about 2:10/km, so the threshold field was edited on or just before 7 Feb 2026 and made worse. Treadmill runs without GPS fall back to HR-based TSS and look sane (IF 0.85 to 0.95 on threshold sessions). Swim threshold changed on the same date, from about 8:00 to 9:00 per 100 m (far too slow) to about 2:50 to 3:00 per 100 m. Bike FTP in TrainingPeaks has been about 140 W all year. Ask the coach to set run threshold pace about 6:15/km, run LTHR 170, swim threshold about 2:40/100 m; until then, use hr_load in weekly.csv, not TSS.
 - Resting HR profile field 69 is a placeholder.
-- Wellness data (resting HR, HRV, sleep, Body Battery) is not in activity files; needs a Garmin Connect full export (Training/wellness in Drive).
+- Wellness data (resting HR, HRV, sleep, Body Battery, weight) comes from the TrainingPeaks Metrics Export, not the activity files. Weight is logged only 5 times in the year (81 Oct 2025, 78 Jan 2026, 78 Aug 2026, 83 Sep 2026).
+- The Feb 2026 70.3 race is one multisport FIT file with five sessions (swim, T1, bike, T2, run). load.py's load() returns only the last session; use load_legs() or build_activities.py, which writes one row per leg.
+- Resting HR (Garmin daily) medians: 47 to 50 from Sep 2025 to Jul 2026, then 56.5 in Aug and 62 in Sep 2026. Unexplained as of 28 Sep 2026; see insights.md.

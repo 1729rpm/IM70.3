@@ -3,7 +3,7 @@
 usage: python build_activities.py <fit_folder> <out_csv> [--tp-csv workouts.csv]
 
 What it does:
-  * one row per activity file: date, start time (IST), sport, indoor flag, HR source (strap/wrist),
+  * one row per activity file (one per leg for multisport race files, see `leg`): date, start time (IST), sport, indoor flag, HR source (strap/wrist),
     duration, distance, avg/max HR, power, pace (and treadmill-corrected pace), cadence, temperature,
     decoupling (first half vs second half), Garmin VO2max estimate, training effect
   * flags duplicate uploads: same sport and time windows overlapping by more than 60% of the shorter
@@ -14,7 +14,7 @@ Conventions (see athlete.md): treadmill pace is inflated 10 to 15%, corrected he
 import sys, os, glob, argparse
 import numpy as np, pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from load import load, hr_source, pace
+from load import load, load_legs, hr_source, pace
 from blocks import decoupling
 
 TREADMILL_CORRECTION = 0.88   # actual speed = watch speed * 0.88 (pace 12% slower than shown)
@@ -32,7 +32,18 @@ def garmin_extras(path):
     return vo2, rec
 
 def one(path):
-    df, laps, sess, dev, user, zones, events = load(path)
+    """One row per session in the file. Single-sport files give one row; a multisport race file gives one
+    row per leg (swim, T1, bike, T2, run) sharing the same file name, with `leg` set to n/total."""
+    legs, dev, user, zones, events = load_legs(path)
+    rows=[]
+    for i,(df,laps,sess) in enumerate(legs):
+        r=_row(df, laps, sess, dev, path)
+        if r:
+            r['leg']=f'{i+1}/{len(legs)}' if len(legs)>1 else None
+            rows.append(r)
+    return rows
+
+def _row(df, laps, sess, dev, path):
     if not sess: return None
     sport=str(sess.get('sport')); sub=str(sess.get('sub_sport'))
     indoor = sub in ('treadmill','indoor_cycling','virtual_activity','indoor_rowing','lap_swimming') or ('lat' in df and df.lat.notna().sum()==0)
@@ -80,7 +91,7 @@ def main():
     ap=argparse.ArgumentParser(); ap.add_argument('folder'); ap.add_argument('out'); ap.add_argument('--tp-csv')
     a=ap.parse_args()
     files=[f for f in glob.glob(os.path.join(a.folder,'**','*'),recursive=True) if f.lower().endswith(('.fit','.fit.gz'))]
-    rows=[r for r in (one(f) for f in sorted(files)) if r]
+    rows=[r for f in sorted(files) for r in (one(f) or [])]
     t=pd.DataFrame(rows).sort_values(['date','start_ist']).reset_index(drop=True)
     t=flag_duplicates(t)
     if a.tp_csv:

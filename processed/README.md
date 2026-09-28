@@ -1,7 +1,7 @@
 # Processed tables
 
 - `activities.csv`: one row per activity file, built by `analysis/build_activities.py`. Rows with `duplicate_of` set are the second copy of a session and are excluded from all totals.
-- `weekly.csv`: weeks start Monday. Hours and km exclude duplicates. `tp_shows_h` is what TrainingPeaks displayed, kept to show the inflation.
-- `fitness_curves.csv`: one row per month. Run paces are outdoor only, GPS, within a 3 bpm band of the stated HR, after the first 10 minutes. Bike watts per beat uses chest-strap rides at 100 to 112 W steady. Swim pace at HR 128 to 134.
+- `weekly.csv`: weeks start Monday. Hours and km exclude duplicates and transitions. `tp_shows_h` is what TrainingPeaks displayed, kept to show the inflation. `hr_load` is HR-based load (hours x (avg HR / sport LTHR)^2 x 100, LTHR run 170, bike 162, swim 165) because TrainingPeaks TSS is unusable. `gap_days` is the longest no-training gap of 7 days or more that touches the week. Built by `analysis/build_tables.py`.
+- `fitness_curves.csv`: one row per month, built by `analysis/build_tables.py`. Run paces are outdoor only, GPS, non-interval sessions, within a 3 bpm band of the stated HR, after the first 10 minutes, at least 300 samples. Bike columns use chest-strap MyWhoosh rides with power: HR and watts per beat at 100 to 112 W, and power at HR 130 to 136. Swim pace is per lap at lap HR 128 to 134 (wrist HR in water, low confidence). Also monthly medians of Garmin resting HR, HRV, sleep hours, the last logged weight and the median Garmin VO2max estimate.
 
-`activities.csv` currently covers 6 Aug to 27 Sep 2026 and will be rebuilt from the full export in the year review. The seed rows in `weekly.csv` and `fitness_curves.csv` come from the 21 to 28 Sep 2026 analysis.
+All three tables cover 17 Sep 2025 to 27 Sep 2026 (rebuilt 28 Sep 2026 from the full TrainingPeaks export: 291 activity files, 39 duplicates, one multisport race file split into 5 legs). Sport `transition` rows are the race transitions.
