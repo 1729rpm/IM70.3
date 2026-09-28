@@ -1,9 +1,23 @@
 # Race log
 
-## 2026-02, IRONMAN 70.3 (event name and overall splits to be added)
-- Run 2:20 at avg HR 152, coach's cap under 150, in direct sun, 75 kg. Fitter and higher volume than Sep 2026.
-- Open-half equivalent at the time estimated 2:05 to 2:08. 70.3-to-open ratio about 1.10 to 1.12.
-- Needed: swim, bike, transitions, overall.
+## 2026-01-11, duathlon (5 km run, 40 km bike, 10 km run; event name and result to be added)
+- On file as "Pre race run strides" (37 min, HR 166 avg per TP) and "Running" 1:04 for 10 km at HR 151, 26.7% decoupling on the second run (first run and bike fatigue in the legs). Chest strap not detected. 78 kg.
+
+## 2026-02-14, IRONMAN 70.3 (event name to be added), 75 kg, chest strap throughout
+**Watch total 5:39:21** (from the multisport file; official time to be added).
+
+| Leg | Time | Distance | Avg HR | Max HR | Notes |
+|---|---|---|---|---|---|
+| Swim (open water) | 43:20 | 1.82 km | 135 | 146 | 2:23/100 m |
+| T1 | 6:19 | 470 m | 138 | 162 | |
+| Bike | 3:15:28 | 89.0 km | 148 | 167 | 27.3 km/h, no power meter, cadence 76 |
+| T2 | 5:42 | 320 m | 143 | 148 | |
+| Run | 2:28:33 | 21.04 km | 152 | 172 | 7:03/km, 1.4% decoupling, cadence 162, direct sun |
+
+- Coach's run cap was under 150; averaged 152 and held it flat (1.4% decoupling) for 2:28.
+- Build: 68 real hours in the eight weeks before, 68% completion, longest run 11.1 km plus the 11 Jan duathlon, longest ride 3.2 h. Weekly HR load about 600.
+- Open-half equivalent at the time estimated 2:05 to 2:08 from the curves (Feb pace at HR 160 was 6:24/km). 70.3-to-open ratio about 1.10 to 1.12.
+- Followed by a 38-day break (14 Feb to 24 Mar) and the move to Bangalore; see reports/2026-year-review.md for the cost.
 
 ## 2026-09-27, Bengaluru Marathon, half marathon
 **Result:** 2:21:30 at 21.1 km on the watch (2:22:37 for 21.28 km). Official chip time to be added. Avg HR 164, max 181, wrist HR, cadence 166. Start 6:16 AM, about 22 C, visor, no headphones.

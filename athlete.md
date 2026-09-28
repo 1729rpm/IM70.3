@@ -4,7 +4,7 @@ Last updated 2026-09-28. Update when a number changes; keep the old value in bra
 
 ## Basics
 - Age 30, Bangalore. Triathlete, coached on TrainingPeaks (coach builds the plan; Claude analyses and advises).
-- Weight 83 kg (Sep 2026). Usual weight 76; 75 kg in Feb 2026. Gained about 7 kg in Jun to Sep 2026 after leaving a job. Targets: 78 by mid-Dec 2026, 76 by Feb 2027, 75 for Venice-Jesolo. No deficit until after Goa (1 Nov 2026).
+- Weight 83 kg (10 and 16 Sep 2026). Logged: 78 (6 Jan 2026), 75 (Feb 2026, stated), 78 (8 Aug 2026), 83 (Sep 2026); the 81 logged in Oct 2025 is unverified, Rajat says 76 was constant before 2026. Gained about 5 kg between Aug and Sep 2026 after leaving a job. Targets: 78 by mid-Dec 2026, 76 by Feb 2027, 75 for Venice-Jesolo. No deficit until after Goa (1 Nov 2026).
 - Runs hot: large cardiac drift, most training indoors without a fan or around midday.
 
 ## Heart rate
@@ -39,7 +39,8 @@ Last updated 2026-09-28. Update when a number changes; keep the old value in bra
 
 ## Gear and devices
 - Garmin watch with wrist optical HR; wrist readings have jumped 18 bpm in 20 s and read 25 bpm low on a rep. Garmin HRM-Dual chest strap: slides and is uncomfortable, one 15 s dropout seen. To fix (tighter, electrode gel) or replace with an optical arm band before Goa. Test on two bricks first.
-- Indoor rides on MyWhoosh with power; watch also records them (duplicates).
+- Indoor rides on a Tacx smart trainer with MyWhoosh (power from the trainer, same setup all year); watch also records them (duplicates). Until Mar 2026 the trainer was in an air-conditioned room in Gurgaon; since Mar 2026 it stands in the Bangalore flat's hall by an east-facing balcony door, ceiling fan only, morning sun on the trainer. Bike HR-at-power numbers before and after Mar 2026 are not directly comparable.
+- Swims: Bangalore pool is 25 m (from Mar 2026). Gurgaon pool length unknown.
 - Treadmill pace reads 10 to 15% faster than actual.
 - Headphones: Sony WH-CH720N, not sweat rated; decided not to race with them (heat over ears, cooling conflict).
 - Visor preferred over cap (runs hot); wet head and neck directly at aid stations.
@@ -63,4 +64,4 @@ Last updated 2026-09-28. Update when a number changes; keep the old value in bra
 - Resting HR profile field 69 is a placeholder.
 - Wellness data (resting HR, HRV, sleep, Body Battery, weight) comes from the TrainingPeaks Metrics Export, not the activity files. Weight is logged only 5 times in the year (81 Oct 2025, 78 Jan 2026, 78 Aug 2026, 83 Sep 2026).
 - The Feb 2026 70.3 race is one multisport FIT file with five sessions (swim, T1, bike, T2, run). load.py's load() returns only the last session; use load_legs() or build_activities.py, which writes one row per leg.
-- Resting HR (Garmin daily) medians: 47 to 50 from Sep 2025 to Jul 2026, then 56.5 in Aug and 62 in Sep 2026. Unexplained as of 28 Sep 2026; see insights.md.
+- Resting HR (Garmin daily) medians: 47 to 51 from Sep 2025 to Jul 2026, then 56.5 in Aug and 62 in Sep 2026. Rajat attributes it to alcohol (28 Sep 2026); see insights.md.
