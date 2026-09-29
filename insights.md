@@ -51,4 +51,4 @@ What the data has shown, grouped by theme. Each line carries its date, the evide
 - 11 Jan 2026 duathlon result.
 - Sweat rate and sodium loss (weigh before and after a heat session).
 - Whether the run benchmark can be trusted yet: only three standalone outdoor easy runs exist all year (most runs are treadmill or bricks).
-- Whether MyWhoosh activity files carry the strap's heart rate when the strap is paired to MyWhoosh: the 29 Sep 2026 file lists no heart-rate device and is labelled wrist, so today's ride was excluded from the bike benchmark (reports/2026-09-29-big-gear-strength.md).
+- Since when MyWhoosh has been paired to the chest strap: needed to relabel earlier MyWhoosh-only rows (Jan 2026 onward) from wrist to strap.

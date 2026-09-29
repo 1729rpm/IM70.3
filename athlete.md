@@ -51,6 +51,7 @@ Race dates, targets and unavailable windows: `config/athlete.yaml` (dates) and `
 
 ## TrainingPeaks and Garmin data quirks
 - Every MyWhoosh ride uploads twice (11 of 34 ride rows in Aug to Sep 2026). Fix the upload path.
+- MyWhoosh files carry the chest-strap heart rate when the strap is paired to MyWhoosh, but list no sensor, so a MyWhoosh-only ride (watch not recording) comes in labelled wrist and needs hr_source set to strap by hand (29 Sep 2026).
 - Run TSS is wrong for the whole year, in two regimes. Sep 2025 to 6 Feb 2026: outdoor runs show IF 1.4 to 1.9 and TSS 200 to 340, which back-solves to a run threshold pace of about 4:35/km. From 7 Feb 2026: IF 2.5 to 3.5 and TSS 500 to 2,800, back-solving to about 2:10/km, so the threshold field was edited on or just before 7 Feb 2026 and made worse. Treadmill runs without GPS fall back to HR-based TSS and look sane. Swim threshold changed on the same date, from about 8:00 to 9:00 per 100 m to about 2:50 to 3:00. Bike FTP in TrainingPeaks has been about 140 W all year. Ask the coach to set run threshold pace about 6:15/km, run LTHR 170, swim threshold about 2:40/100 m; until then the repo uses its own HR load.
 - Wellness data (resting HR, HRV, sleep, Body Battery, weight) comes from the TrainingPeaks Metrics Export, not the activity files. Weight is logged only a few times a year.
 - The Feb 2026 70.3 is one multisport file with five parts; the scripts split it into one row per part.

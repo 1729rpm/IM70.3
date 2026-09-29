@@ -36,7 +36,7 @@ HR load is hours x (average HR / threshold HR)^2 x 100; a steady 1 h ride at thr
 These are monthly medians from the full activity files; they refresh when a full export is reprocessed. For week-to-week movement use the benchmarks below.
 
 ## Benchmark sessions (latest vs previous)
-- **Indoor ride with power and chest strap, 60 min or more** (21 on file). Latest 2026-09-25: 75 W, HR 113, drift 12.3%, 60.3 min (strap HR). Before that 2026-09-22: 108 W, HR 131, drift 7.9%, 69.1 min (strap HR).
+- **Indoor ride with power and chest strap, 60 min or more** (22 on file). Latest 2026-09-29: 113 W, HR 128, drift 10.0%, 77.2 min (strap HR). Before that 2026-09-25: 75 W, HR 113, drift 12.3%, 60.3 min (strap HR).
 - **Long ride, 150 min or more** (16 on file). Latest 2026-09-19: 101 W, HR 141, drift 9.0%, 181 min, 70.06 km (strap HR). Before that 2026-09-12: 100 W, HR 139, drift 14.2%, 158.3 min, 62.31 km (strap HR).
 - **Run starting within 45 min of a ride ending** (23 on file). Latest 2026-08-22: 7:19/km, HR 157, drift -0.1%, 36.8 min (wrist HR). Before that 2026-08-08: 7:33/km, HR 151, drift 9.4%, 39.6 min (wrist HR).
 - **Outdoor easy run, pace at HR 145 to 158** (3 on file). Latest 2026-09-16: 8:01/km, HR 149, drift 4.3% (wrist HR). Before that 2026-09-07: 8:29/km, HR 145, drift 7.5% (wrist HR).
