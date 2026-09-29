@@ -122,7 +122,7 @@ def section_unavailable(today):
 
 
 def section_plan(today):
-    files = sorted(glob.glob(P('plan', '*.md')))
+    files = sorted(f for f in glob.glob(P('plan', '*.md')) if not os.path.basename(f).lower().startswith('readme'))
     if not files:
         return ['- no plan file yet; upcoming workouts appear here once a TrainingPeaks export that includes future dates has been ingested']
     latest = files[-1]
