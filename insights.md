@@ -52,3 +52,6 @@ What the data has shown, grouped by theme. Each line carries its date, the evide
 - Sweat rate and sodium loss (weigh before and after a heat session).
 - Whether the run benchmark can be trusted yet: only three standalone outdoor easy runs exist all year (most runs are treadmill or bricks).
 - Since when MyWhoosh has been paired to the chest strap: needed to relabel earlier MyWhoosh-only rows (Jan 2026 onward) from wrist to strap.
+- 2026-10-05. Is the Goa bike target of 3:20 too slow? 90 km took 2:49 of riding at strap HR 147 outdoors on 3 Oct; the answer depends on whether that ride was solo and on the race bike. Settle when the race plan is written. (reports/2026-W40-review.md)
+- 2026-10-05. Is the 5K estimate of about 28:30 out of date? 1 km reps at 5:01 to 5:04/km on 30 Sep against 5:40 to 6:03 on 19 Aug; one session, wrist HR. (reports/2026-W40-review.md)
+- 2026-10-05. Has resting HR come back down? Median 52.5 over six mornings in the week of 28 Sep against 62 for September; needs two more weeks of readings. (reports/2026-W40-review.md)
