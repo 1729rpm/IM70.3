@@ -15,7 +15,7 @@ What it does, in order:
      processed/benchmarks.csv, processed/wellness_daily.csv and STATE.md.
      processed/fitness_curves.csv needs record-level data from every activity file, so it is rebuilt only with
      --full (upload the whole activity-file archive for that).
-  5. Writes plan/YYYY-Www.md for any planned workouts dated after the last completed session.
+  5. Writes plan/YYYY-Www.md for planned workouts dated today or later that are not yet done.
 
 The raw activity files are not kept in the repo (they live in Google Drive). Everything else is.
 """
@@ -98,19 +98,32 @@ def update_manifest(fits, today):
     return new
 
 
+def attach_plan_in_range(t, workouts):
+    """Attach planned minutes and coach titles to every row dated inside the span raw/workouts.csv covers,
+    not only to this run's new rows. A row added before its week's workouts CSV arrived (a single-session
+    upload, say) would otherwise keep a blank title for good. Rows outside the span keep what they have."""
+    if workouts is None or not len(t): return t
+    days = pd.to_datetime(workouts.WorkoutDay)
+    lo, hi = str(days.min().date()), str(days.max().date())
+    t = t.copy(); t['date'] = t.date.astype(str)
+    inside = t.date.between(lo, hi)
+    if not inside.any(): return t
+    part = BA.attach_plan(t[inside], workouts); part['date'] = part.date.astype(str)
+    return pd.concat([t[~inside], part], ignore_index=True)
+
+
 def append_activities(new_files, workouts):
     apath = P('processed', 'activities.csv')
     acts = pd.read_csv(apath) if os.path.exists(apath) else pd.DataFrame()
     rows = [r for nf in new_files for r in (BA.one(nf['path']) or [])]
-    if not rows:
+    if not rows and not len(acts):
         print('no new activities'); return acts
-    t = pd.DataFrame(rows)
-    if workouts is not None:
-        t = BA.attach_plan(t, workouts)
-    t = pd.concat([acts, t], ignore_index=True)
+    t = pd.concat([acts, pd.DataFrame(rows)], ignore_index=True) if rows else acts
     t['date'] = t.date.astype(str)
+    t = attach_plan_in_range(t, workouts)
     t = t.sort_values(['date', 'start_ist']).reset_index(drop=True)
-    t = BA.flag_duplicates(t)
+    if rows:
+        t = BA.flag_duplicates(t)
     t.to_csv(apath, index=False)
     print(f'activities.csv: +{len(rows)} rows, now {len(t)} ({t.duplicate_of.notna().sum()} duplicates flagged)')
     return t
@@ -136,9 +149,10 @@ def rebuild_weekly(acts, workouts):
 def write_plan(workouts, acts, today):
     if workouts is None: return
     w = workouts.copy(); w['date'] = pd.to_datetime(w.WorkoutDay).dt.date
-    last_done = pd.to_datetime(acts.date).max().date() if len(acts) else today
-    fut = w[(w.date > last_done) & w.PlannedDuration.notna()].sort_values('date')
-    if not len(fut): print('no planned workouts after the last completed session'); return
+    # upcoming = planned, not yet done, dated today or later. Planned sessions that were skipped earlier in
+    # the week are history (raw/workouts.csv keeps them), not a plan.
+    fut = w[(w.date >= today) & w.PlannedDuration.notna() & ~(w.TimeTotalInHours.fillna(0) > 0)].sort_values('date')
+    if not len(fut): print('no planned workouts from today onward in this export'); return
     desc_col = next((c for c in ('WorkoutDescription', 'Description') if c in w), None)
     cc_col = 'CoachComments' if 'CoachComments' in w else None
     os.makedirs(P('plan'), exist_ok=True)

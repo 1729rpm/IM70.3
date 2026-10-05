@@ -66,6 +66,9 @@ def weekly(acts, tp):
     w['sessions'] = a.groupby('week').size()
     tp = tp.copy(); tp['date'] = pd.to_datetime(tp.WorkoutDay)
     tp['week'] = (tp.date - pd.to_timedelta(tp.date.dt.weekday, unit='D')).dt.date
+    # a week with a plan but no completed session must keep its planned counts (0% done, not "none planned"),
+    # so widen the index to the plan's weeks before the plan columns are attached
+    w = w.reindex(sorted(set(w.index) | set(tp.week)))
     tp['done'] = tp.TimeTotalInHours.fillna(0) > 0
     tp['planned'] = tp.PlannedDuration.notna()
     g = tp.groupby('week')

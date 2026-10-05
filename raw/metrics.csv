@@ -1,0 +1,43 @@
+Timestamp,Type,Value
+2026-09-29 00:00:00,Body Battery,Min : 23 / Max : 85 / Avg : 46
+2026-09-29 00:00:00,Stress Level,Max : 99 / Avg : 37
+2026-09-29 00:00:00,Pulse,55
+2026-09-30 00:00:00,HRV,43
+2026-09-30 00:00:00,Sleep Hours,7.59
+2026-09-30 00:00:00,Time In Deep Sleep,1.8
+2026-09-30 00:00:00,Time In Light Sleep,4.31666666666667
+2026-09-30 00:00:00,Time In REM Sleep,1.47138888888889
+2026-09-30 00:00:00,Time Awake,0.25
+2026-09-30 00:00:00,Body Battery,Min : 32 / Max : 90 / Avg : 70
+2026-09-30 00:00:00,Stress Level,Max : 72 / Avg : 13
+2026-09-30 00:00:00,Pulse,50
+2026-10-01 00:00:00,Body Battery,Min : 16 / Max : 60 / Avg : 33
+2026-10-01 00:00:00,Stress Level,Max : 99 / Avg : 36
+2026-10-01 00:00:00,Pulse,61
+2026-10-02 00:00:00,HRV,37
+2026-10-02 00:00:00,Sleep Hours,7.05
+2026-10-02 00:00:00,Time In Deep Sleep,1.85
+2026-10-02 00:00:00,Time In Light Sleep,4.25
+2026-10-02 00:00:00,Time In REM Sleep,0.95
+2026-10-02 00:00:00,Time Awake,0.0333333333333333
+2026-10-02 00:00:00,Body Battery,Min : 18 / Max : 69 / Avg : 48
+2026-10-02 00:00:00,Stress Level,Max : 72 / Avg : 21
+2026-10-02 00:00:00,Pulse,52
+2026-10-03 00:00:00,HRV,48
+2026-10-03 00:00:00,Sleep Hours,2.89
+2026-10-03 00:00:00,Time In Deep Sleep,0.9
+2026-10-03 00:00:00,Time In Light Sleep,1.54361111111111
+2026-10-03 00:00:00,Time In REM Sleep,0.45
+2026-10-03 00:00:00,Time Awake,0
+2026-10-03 00:00:00,Body Battery,Min : 5 / Max : 70 / Avg : 34
+2026-10-03 00:00:00,Stress Level,Max : 96 / Avg : 35
+2026-10-03 00:00:00,Pulse,48
+2026-10-04 00:00:00,HRV,35
+2026-10-04 00:00:00,Sleep Hours,7.87
+2026-10-04 00:00:00,Time In Deep Sleep,1.76666666666667
+2026-10-04 00:00:00,Time In Light Sleep,5.30666666666667
+2026-10-04 00:00:00,Time In REM Sleep,0.8
+2026-10-04 00:00:00,Time Awake,0.516666666666667
+2026-10-04 00:00:00,Body Battery,Min : 5 / Max : 59 / Avg : 31
+2026-10-04 00:00:00,Stress Level,Max : 39 / Avg : 19
+2026-10-04 00:00:00,Pulse,53
